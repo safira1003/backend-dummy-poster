@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const serverless = require('serverless-http');
 
 const { getStoredPosts, storePosts } = require('../data/posts');
 
