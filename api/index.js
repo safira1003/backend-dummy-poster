@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const serverless = require('serverless-http');
 
-const { getStoredPosts, storePosts } = require('../data/posts');
+const { getStoredPosts, storePosts } = require('./posts');
 
 const app = express();
 app.use(bodyParser.json());
