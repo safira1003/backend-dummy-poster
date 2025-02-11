@@ -20,7 +20,9 @@ app.use((req, res, next) => {
 });
 
 app.get('/posts', async (req, res) => {
+  console.log("Fetching posts...");
   const storedPosts = await getStoredPosts();
+  console.log("Posts fetched:", storedPosts.length);
   res.json({ posts: storedPosts });
 });
 

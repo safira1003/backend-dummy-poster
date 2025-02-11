@@ -2,9 +2,9 @@
   "name": "react-crash-course-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "api/app.js",
+  "main": "api/index.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node api/index.js"
   },
   "keywords": [],
   "author": "",
