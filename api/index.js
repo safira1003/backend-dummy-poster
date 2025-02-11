@@ -5,10 +5,6 @@ const serverless = require('serverless-http');
 const { getStoredPosts, storePosts } = require('../data/posts');
 
 const app = express();
-
-console.log("Server is starting...");
-
-
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
@@ -21,9 +17,7 @@ app.use((req, res, next) => {
 });
 
 app.get('/posts', async (req, res) => {
-  console.log("Fetching posts...");
   const storedPosts = await getStoredPosts();
-  console.log("Posts fetched:", storedPosts.length);
   res.json({ posts: storedPosts });
 });
 
@@ -45,11 +39,10 @@ app.post('/posts', async (req, res) => {
   res.status(201).json({ message: 'Stored new post.', post: newPost });
 });
 
-// app.listen(8080);
-// app.listen(8080, () => {
-//   console.log("Server is running on http://localhost:8080");
-// });
+const PORT = 8080;
+app.listen(PORT, () => {
+  console.log(`Server running on http://localhost:${PORT}`);
+});
 
 // // Export the app as a serverless function
-const serverless = require('serverless-http');
-module.exports = serverless(app);
+module.exports.handler = serverless(app);
