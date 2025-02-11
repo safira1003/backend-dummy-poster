@@ -49,6 +49,6 @@ app.post('/posts', async (req, res) => {
 //   console.log("Server is running on http://localhost:8080");
 // });
 
-// Export the app as a serverless function
+// // Export the app as a serverless function
 const serverless = require('serverless-http');
 module.exports = serverless(app);
